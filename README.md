@@ -37,4 +37,4 @@ Any device or application built with this BIOS is the responsibility of its crea
 
 
 
-(Partially made with ai, see [AI excuse](AI excuse.md)
+(Partially made with ai, see [AI excuse](AI excuse.md))
