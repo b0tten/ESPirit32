@@ -1,0 +1,80 @@
+This is an exact copy of the API description waiting you in the API file.
+
+
+
+** Logging / Timing:
+|
+\_ print(text) : prints out your text in a new line
+\_ print_int(int) : prints out an integer in a new line
+|
+\_ sleep_ms(int) : waits for some time, allowing other tasks to run, not super precise
+\_ ticks_ms() : returns the number of time passed since the BIOS started (don't make apps that may run for longer than 49 days)
+|
+**
+
+
+** Graphics:
+|
+* Graphics are drawn in memory; you first draw something, then you submit it with 'gfx_present()'
+|
+\_ bios_rgb565(r, g, b) : converts normal RGB values(0-255) to RGB565 format, which is the input type for the display; 
+* example: "gfx_fill_rect(0, 0, 5, 5, bios_rgb565(255,255,255))" makes a white square
+|
+\_ gfx_size() : returns configured display size
+\_ gfx_clear(rgb565) : fills / clears the display with a selected color
+\_ gfx_fill_rect(x, y, w, h, rgb565) : draws a rextangle; X and Y are the starting coordinates(top left corner), W and H are the width and height
+\_ gfx_pixel(x, y, rgb565) : draws a single pixel at X,Y (top-left origin)
+\_ gfx_present() : presents your drawn things on the screen
+\_ gfx_backlight(int) : sets the brightness of your screen to a specified percentage
+|
+\_ gfx_draw_text(x, y, text, rgb565) : draws a specified text; X and Y are the starting coordinates(top left corner)
+\_ gfx_draw_text_scaled(x, y, text, rgb565, scale) : draws text scaled by an integer factor from 1 to 5
+\_ gfx_text_width(text) : returns your text width size in pixels
+\_ gfx_text_height(text) : returns your text height size in pixels
+|
+\_ gfx_draw_image(x, y, asset_id) : draws a previously loaded image (from asset_id) at X,Y (top-left origin)
+|
+**
+
+
+** Game management:
+|
+\_ select_game(name) : starts a game from "/sd/GAMES/<name>/"; you can pass `MYGAME` or `MYGAME.ELF` (case-insensitive).
+* Paths are NOT allowed (sandboxed): pass only a game name.
+|
+**
+
+** Filesystem:
+|
+\_ read_self(path, buffer, size) : reads from "SD:/GAMES/<this_app_name>/..."
+\_ read_data(path, buffer, size) : reads from "SD:/ASSETS/<this_app_name>/..."
+\_ list_self(dir, buffer, size) : lists files in "SD:/GAMES/<this_app_name>/<dir>" (newline-separated)
+\_ list_data(dir, buffer, size) : lists files in "SD:/ASSETS/<this_app_name>/<dir>" (newline-separated)
+|
+**
+
+** Assets (images):
+|
+\_ asset_load_self(path) : loads an .eimg image from "SD:/GAMES/<this_app_name>/<path>" into the game's 2MB RAM window; returns asset_id (>0), or a negative error code
+\_ asset_load_data(path) : loads an .eimg image from "SD:/ASSETS/<this_app_name>/<path>" into the game's 2MB RAM window; returns asset_id (>0), or a negative error code
+\_ asset_unload(asset_id) : unloads a previously loaded asset, you need to do that sometimes to not run out of asset storage
+|
+** 
+
+** Inputs:
+|
+\_ button_pressed(name) : returns the last sampled state of a configured input/button name; `true` means pressed/active
+* names come from `CONFIG.TXT`, example: `btn_a, 1` then `button_pressed("btn_a")`
+* default navigation button names are: 'btn_up', 'btn_down', 'btn_left', 'btn_right', 'btn_select', 'btn_back'
+|
+**
+
+** Other:
+|
+* USE AT YOUR OWN RISK; BETA FEATURES
+|
+\_ install_game(name) : installs a game from sd to the internal storage; only one at a time can be installed
+\_ start_installed_game() : starts a game installed in the internal storage
+|
+**
+
