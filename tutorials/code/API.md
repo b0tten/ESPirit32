@@ -178,7 +178,7 @@
             * Returns true if the passed button is pressed(active)
             * Name is the name for the button, not the GPIO pin.
             * Names come from the `config.txt` file.
-            * All device must have the default navigation buttons, being:
+            * All devices must have the default navigation buttons, being:
                 * `btn_up`
                 * `btn_down`
                 * `btn_left`
