@@ -19,12 +19,12 @@ This is an exact copy of the API description waiting you in the API file.
 |
 \_ bios_rgb565(r, g, b) : converts normal RGB values(0-255) to RGB565 format, which is the input type for the display; 
 * example: "gfx_fill_rect(0, 0, 5, 5, bios_rgb565(255,255,255))" makes a white square
+\_ gfx_present() : presents your drawn things on the screen
 |
 \_ gfx_size() : returns configured display size
 \_ gfx_clear(rgb565) : fills / clears the display with a selected color
 \_ gfx_fill_rect(x, y, w, h, rgb565) : draws a rextangle; X and Y are the starting coordinates(top left corner), W and H are the width and height
 \_ gfx_pixel(x, y, rgb565) : draws a single pixel at X,Y (top-left origin)
-\_ gfx_present() : presents your drawn things on the screen
 \_ gfx_backlight(int) : sets the brightness of your screen to a specified percentage
 |
 \_ gfx_draw_text(x, y, text, rgb565) : draws a specified text; X and Y are the starting coordinates(top left corner)
