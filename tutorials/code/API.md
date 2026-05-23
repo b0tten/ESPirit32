@@ -82,8 +82,13 @@
             * If it succeds, your current program will be closed and the new one will be opened instead
 
         * Exiting
-            * To exit from your current program/game back to menu, your program should use the "return" command.
-            * This is not a part of the API, it's how the game loader works
+            * To exit from your current program/game back to menu, your program's game entry should end.
+            * Your game runs in a `void game_entry()` thing:
+            ```
+            void game_entry(const bios_api_t *api) { <your code> }
+            ```
+            * Once it ends, the game will tell the bios that it is done,
+            * This means the menu will be opened back again.
 
     * Filesystem:
         * read_self(path, buffer, size)
