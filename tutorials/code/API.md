@@ -103,7 +103,7 @@
            ```
            char tmp[64];
            tmp[0] = 0;
-           int check = api->read_data(file.txt, tmp, sizeof(tmp));
+           int check = api->read_self(file.txt, tmp, sizeof(tmp));
            if (check == 0) api->print("ok");
            ```
         
