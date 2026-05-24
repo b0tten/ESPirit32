@@ -17,7 +17,7 @@
 - Arduino is easy to learn coding with, but it's slow: it's only used to control basic appliances, 11th LED crashes it.
 - ESP32 is faster, and is much wider in use than just lighting up LEDs, but hard to code, even harder to learn coding with.
 - Here Espirit comes in, it's a bridge that allows you to focus on the actual coding, not the dark EPS32 stuff.
-- You will have an easier learning curve(just like the arduino), but will not have the celling of basic appliances*.
+- You will have an easier learning curve(just like the arduino), but will not have the celling of basic features*.
 - Code it, it will **just work**.
 
 ## License
