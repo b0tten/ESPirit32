@@ -42,4 +42,10 @@ Espirit is a platform designed for games/apps in a way, that use the screen as a
 Addition of physical outputs(such as LEDs, motors, general pin output mode) will be added in future, and is not the main design of this platform / OS.
 (this OS is for a console-type thing)
 
+### Compatibility Notice
+Espirit's goal is to make same code to run on as much devices as possible, but for now:
+This project currently is in **ALPHA** state,
+hardware it can run on is limited to barely something.
+All hardware / Devices stuf is located at [tutorials/hardware](tutorials/hardware)
+
 (Partially made with ai, see [AI excuse](AI%20excuse.md))
