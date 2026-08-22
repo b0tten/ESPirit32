@@ -1,6 +1,7 @@
 # **ESPirit32: It just works.**
 
-*Code less, create more. Fast. Stable. Predictable.*
+* **Code less, create more.**
+* **Fast. Stable. Predictable.**
 
 ---
 
