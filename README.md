@@ -1,51 +1,53 @@
 # **ESPirit32: It just works.**
 
-*Code less, create more.*
+*Code less, create more. Fast. Stable. Predictable.*
 
-*Fast. Stable. **Yours**.*
+---
 
 ## Overview
-- **ESPirit32** is an Operating System that prioritises stability and predictability over extra speed.
+**ESPirit32** is a bare-metal operating system for ESP32 handhelds that prioritizes low-level stability, predictability, and developer quality of life.
 
+---
 
-## Why choose us?
-- **Workflow > Overclock**: We optimize for the developer's time, not just CPU cycles.
-- **Real OS, Not a Menu**: If you have to write your own screen drivers for every app, it’s just a launcher.
-  Espirit32 provides the hardware abstraction so you can focus on the logic.
-- **True Portability**: If you have to recompile your app for every chip variation, it's just a binary loader. Espirit32 apps are built for the platform, not the pinout.
-- **Sandboxing as a Feature**: We turned a security "limitation" into a stability powerhouse.
+## Why ESPirit32?
+* **Real OS, Not a Menu:** Stop re-writing display drivers for every project. ESPirit32 handles hardware abstraction so you can focus entirely on game logic.
+* **True Portability:** Apps are built for the platform, not the pinout. Write your code once, run it across supported configurations without modifying pin definitions.
+* **Workflow > Overclock:** Designed to optimize developer time without sacrificing raw hardware performance.
+* **Sandboxed & Stable:** Hardware limitations are turned into a stability powerhouse—no rogue memory leaks taking down the kernel.
 
+---
 
-## The vision:
-- **Break the Ceiling**: Arduino is easy but fragile. ESP-IDF is powerful but a nightmare to learn. Espirit32 is the bridge - the simplicity of Arduino with the professional power of a managed system.
-- **The "Dark Side" is Handled**: We dealt with the DMA, the SPI timing, and the memory defragmentation.
-- **Build it. Run it. It just works.**
+## The Vision
+* **Bridge the Gap:** Arduino is approachable but fragile; raw ESP-IDF is powerful but steep. ESPirit32 combines the simplicity of high-level sandboxing with raw embedded performance.
+* **The "Dark Side" is Handled:** We deal with SPI DMA pipelines, display transaction batching, PSRAM memory defragmentation, and hardware RNG so you don't have to.
+* **Build it. Run it. It just works.**
 
+---
+
+## Technical Highlights
+* **High-Speed Display Engine:** Customized write-pipeline capable of sub-20ms frame flushes* over a shared SPI bus—saturating the display bus at maximum wire speed.
+* **Micro-Console Focus:** Designed primarily for display-based applications and games. *(Support for general-purpose GPIO hardware controls like external motors/LEDs will arrive in future updates).*
+
+---
+
+## Compatibility & Status
+> **ALPHA NOTICE:** ESPirit32 aims to run the exact same binary across a broad range of hardware. Currently in **ALPHA**, supported board configurations are limited. 
+> 
+> Check out [tutorials/hardware](tutorials/hardware) for supported pinouts and setup guides.
+
+---
 
 ## License
-The BIOS is licensed under the GNU General Public License v3.0 (GPLv3).
-See [LICENSE](LICENSE) for the full text.
+The ESPirit32 BIOS is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](LICENSE) for details.
 
 ### Special Exception
-Applications and games using the BIOS through its public API
-are not considered derivative works and may be licensed independently.
+Applications, games, and libraries linking to the BIOS strictly via its public API (`bios_api_t`) are **not** considered derivative works and may be licensed independently under any license (open or proprietary).
 
+---
 
-## Disclaimer
-The authors provide this BIOS and examples "as-is".
-We do not manufacture, endorse, or support any devices.
-Any device or application built with this BIOS is the responsibility of its creator.
+## Disclaimers
+*50 FPS (20ms frame flush) is fully possible and achievable, however it is not the default display driver speed mode.
 
+Provided "as-is" without warranty. The maintainers do not manufacture or officially endorse specific hardware devices.
 
-## Other stuff
-Espirit is a platform designed for games/apps in a way, that use the screen as an output.
-Addition of physical outputs(such as LEDs, motors, general pin output mode) will be added in future, and is not the main design of this platform / OS.
-(this OS is for a console-type thing)
-
-### Compatibility Notice
-Espirit's goal is to make same code to run on as much devices as possible, but for now:
-This project currently is in **ALPHA** state,
-hardware it can run on is limited to barely something.
-All hardware / Devices stuf is located at [tutorials/hardware](tutorials/hardware)
-
-(Partially made with ai, see [AI excuse](AI%20excuse.md))
+*(Partially written with AI assistance - see [AI_excuse.md](AI%20excuse.md))*
