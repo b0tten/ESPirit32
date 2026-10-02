@@ -17,6 +17,10 @@
 * **Sandboxed & Stable:** So-called hardware "limitation" was turned into a stability powerhouse.
 
 
+## NOT PUBLISHED YET
+This piece of software is **not** published yet - dummy repository you can only find examples on, **wait for publishing.**
+
+
 
 ## The Vision
 * **Bridge the Gap:** Arduino is approachable but fragile; raw ESP-IDF is powerful but steep. ESPirit32 combines the simplicity of high-level sandboxing with raw embedded performance.
